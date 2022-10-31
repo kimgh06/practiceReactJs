@@ -1,12 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 
 function App() {
-  let num = 0;
+  const [num, setNum] = useState(0);
 
   const cl = ()=>{
-    num++;
-    console.log(num);
+    setNum(num+1);
   }
 
   return (
