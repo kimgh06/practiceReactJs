@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 
-let num = 0;
-
-function cl(){
-  num++;
-}
-
 function App() {
+  let num = 0;
+  
+  function cl(){
+    num++;
+  }
+
   return (
   <div>
-    <span>num: {num}</span>
+    <h3>num: {num}</h3>
     <button onClick={cl}>plus</button>
   </div>
   );
