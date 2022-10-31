@@ -3,9 +3,10 @@ import './App.css';
 
 function App() {
   let num = 0;
-  
-  function cl(){
+
+  const cl = ()=>{
     num++;
+    console.log(num);
   }
 
   return (
