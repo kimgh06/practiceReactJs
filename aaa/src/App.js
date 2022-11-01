@@ -14,7 +14,7 @@ function App() {
 
   return (
   <div>
-    <h3>num: {num}</h3>
+    <h3 className='App'>num: {num}</h3>
     <button onClick={minus}>minus</button>
     <button onClick={plus}>plus</button>
   </div>
