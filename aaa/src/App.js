@@ -5,11 +5,11 @@ function App() {
   const [num, setNum] = useState(0);
 
   const plus = ()=>{
-      setNum(num+1);
+      setNum((a)=>a+1);
   }
 
   const minus = ()=>{
-    setNum(num-1);
+    setNum((a)=>a-1);
   }
 
   return (
