@@ -13,10 +13,12 @@ function App() {
   }
 
   return (
-  <div>
-    <h3 className='App'>num: {num}</h3>
-    <button onClick={minus}>minus</button>
-    <button onClick={plus}>plus</button>
+  <div className='App'>
+    <h2>num: {num}</h2>
+    <div id='buttons'>
+      <button onClick={minus}>minus</button>
+      <button onClick={plus}>plus</button>
+    </div>
   </div>
   );
 }
