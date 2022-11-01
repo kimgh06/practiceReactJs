@@ -15,9 +15,11 @@ function App() {
   return (
   <div className='App'>
     <h2>num: {num}</h2>
-    <div id='buttons'>
-      <button onClick={minus}>minus</button>
-      <button onClick={plus}>plus</button>
+    <div>
+      <div>
+      <button onClick={minus} className='buttons'>minus</button>
+      <button onClick={plus} id='leftButton' className='buttons'>plus</button>
+      </div>
     </div>
   </div>
   );

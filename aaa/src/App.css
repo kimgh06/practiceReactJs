@@ -1,6 +1,14 @@
 .App{
     text-align: center;
 }
-#buttons{
-    display: flex;
+#leftButton{
+    margin-left: 30px;
+}
+.buttons{
+    font-size: 15px;
+    height: 40px;
+    width: 60px;
+    background-color: beige;
+    border:1px solid black;
+    border-radius: 20px;
 }
