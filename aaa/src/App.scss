@@ -11,4 +11,10 @@
     background-color: beige;
     border:1px solid black;
     border-radius: 20px;
+    &:hover{
+        background-color: darken(beige, 10%);
+    }
+    &:active{
+        background-color: lighten(beige, 10%);
+    }
 }
