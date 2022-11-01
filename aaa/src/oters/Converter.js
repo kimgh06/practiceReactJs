@@ -16,6 +16,9 @@ function Converter(){
       <label htmlFor='hours'>hours : </label>
       <input value={minutes/60} id='hours' placeholder='hours' type={'number'}/>
       </div>
+      <button onMouseDown={()=>{
+        setMinutes(0);
+      }}>reset</button>
     </div>
   );
 }
