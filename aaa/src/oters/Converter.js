@@ -11,7 +11,6 @@ function Converter(){
       <label htmlFor='minutes'>min : </label>
       <input value={minutes} onChange={minchange} id='minutes' placeholder='minutes' type={'number'}/>
       </div>
-      <h4>{minutes}</h4>
       <div>
       <label htmlFor='hours'>hours : </label>
       <input value={minutes/60} id='hours' placeholder='hours' type={'number'}/>
