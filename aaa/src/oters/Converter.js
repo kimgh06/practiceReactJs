@@ -7,11 +7,15 @@ function Converter(){
   }
   return(
     <div>
-      <h4>{minutes}</h4>
-      <label htmlFor='minutes'>min</label>
+      <div>
+      <label htmlFor='minutes'>min : </label>
       <input value={minutes} onChange={minchange} id='minutes' placeholder='minutes' type={'number'}/>
-      <label htmlFor='hours'>hours</label>
-      <input id='hours' placeholder='hours' type={'number'}/>
+      </div>
+      <h4>{minutes}</h4>
+      <div>
+      <label htmlFor='hours'>hours : </label>
+      <input value={minutes/60} id='hours' placeholder='hours' type={'number'}/>
+      </div>
     </div>
   );
 }
