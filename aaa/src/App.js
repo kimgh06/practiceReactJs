@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import './App.scss';
+import Converter from './oters/Converter';
 
 function App() {
   const [num, setNum] = useState(0);
@@ -14,13 +15,14 @@ function App() {
 
   return (
   <div className='App'>
-    <h2>합 : {num}</h2>
     <div>
+    <h2>합 : {num}</h2>
       <div>
       <button onMouseDown={minus} className='buttons'>빼기</button>
       <button onMouseDown={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
+    <Converter/>
   </div>
   );
 }
