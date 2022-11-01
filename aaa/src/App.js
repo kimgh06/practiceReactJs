@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import './App.css';
+import './App.scss';
 
 function App() {
   const [num, setNum] = useState(0);
@@ -14,11 +14,11 @@ function App() {
 
   return (
   <div className='App'>
-    <h2>num: {num}</h2>
+    <h2>합 : {num}</h2>
     <div>
       <div>
-      <button onClick={minus} className='buttons'>minus</button>
-      <button onClick={plus} id='leftButton' className='buttons'>plus</button>
+      <button onClick={minus} className='buttons'>빼기</button>
+      <button onClick={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
   </div>
