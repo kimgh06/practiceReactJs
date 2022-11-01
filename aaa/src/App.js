@@ -4,8 +4,8 @@ import './App.scss';
 function App() {
   const [num, setNum] = useState(0);
 
-  const plus = (e)=>{
-    setNum(num+1);
+  const plus = ()=>{
+      setNum(num+1);
   }
 
   const minus = ()=>{
