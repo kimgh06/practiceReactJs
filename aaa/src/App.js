@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import './App.scss';
+import './App.css';
 
 function App() {
   const [num, setNum] = useState(0);
