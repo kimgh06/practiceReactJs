@@ -13,6 +13,8 @@ function App() {
   const minus = ()=>{
     setNum((a)=>a-1);
   }
+  
+  const [index, setIndex] = useState(0);
 
   return (
   <div className='App'>
@@ -23,8 +25,13 @@ function App() {
       <button onClick={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
-    <Min2hour/>
-    <Km2mile/>
+    <select onChange={(e)=>{
+      setIndex(e.target.value);
+    }}>
+      <option value={0}>Minutes 2 Hours</option>
+      <option value={1}>Km 2 Miles</option>
+    </select>
+    {index === '0'? <Min2hour/>:""}
   </div>
   );
 }
