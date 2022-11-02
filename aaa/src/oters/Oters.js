@@ -22,8 +22,8 @@ function Oters(){
     <div>
     <h2>합 : {num}</h2>
       <div>
-      <oterButton onClick={minus} className='buttons' text='빼기'/>
-      <oterButton onClick={plus} id='leftButton' className='buttons' text='더하기'/>
+      <button onClick={minus} className='buttons' text='빼기'>빼기</button>
+      <button onClick={plus} id='leftButton' className='buttons' text='더하기'>더하기</button>
       </div>
     </div>
     <hr/>
