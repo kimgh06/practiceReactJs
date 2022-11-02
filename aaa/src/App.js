@@ -25,7 +25,7 @@ function App() {
       <button onClick={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
-    <select onChange={(e)=>{
+    <select value={-1} onChange={(e)=>{
       setIndex(e.target.value);
     }}>
       <option value={0}>Minutes 2 Hours</option>
