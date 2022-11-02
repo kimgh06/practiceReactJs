@@ -17,6 +17,9 @@
     &:active{
         background-color: lighten(beige, 10%);
     }
+    & + &{
+        margin-left: 10px;
+    }
 }
 input[type="number"]{
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button{
