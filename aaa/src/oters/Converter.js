@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 
 function Converter(){
   const [minutes, setMinutes] = useState();
+  const [flipped, setFlipped] = useState(false);
   const minchange = (e)=>{
     setMinutes(e.target.value);
   }
@@ -19,7 +20,7 @@ function Converter(){
         setMinutes(0);
       }}>Reset</button>
       <button onMouseDown={()=>{
-        
+
       }}>Flips</button>
     </div>
   );
