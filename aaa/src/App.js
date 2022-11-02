@@ -24,6 +24,7 @@ function App() {
       </div>
     </div>
     <Min2hour/>
+    <Km2mile/>
   </div>
   );
 }
