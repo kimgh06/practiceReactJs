@@ -22,7 +22,7 @@ function Converter(){
       <button onClick={()=>{
         setFlipped((c) =>!c);
         setAmount(flipped ? amount * 60 : amount / 60);
-      }}>Flips</button>
+      }}>{flipped? "flipped":"flips"}</button>
     </div>
   );
 }
