@@ -20,7 +20,7 @@ function Converter(){
         setMinutes(0);
       }}>Reset</button>
       <button onMouseDown={()=>{
-
+        setFlipped(!flipped)
       }}>Flips</button>
     </div>
   );
