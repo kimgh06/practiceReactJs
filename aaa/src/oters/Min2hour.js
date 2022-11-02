@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-function Converter(){
+function Min2hour(){
   const [amount, setAmount] = useState();
   const [flipped, setFlipped] = useState(false);
   const minchange = (e)=>{
@@ -27,4 +27,4 @@ function Converter(){
   );
 }
 
-export default Converter;
+export default Min2hour;

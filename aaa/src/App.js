@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './App.scss';
-import Converter from './oters/Converter';
+import Min2hour from './oters/Min2hour';
 
 function App() {
   const [num, setNum] = useState(0);
@@ -22,7 +22,7 @@ function App() {
       <button onClick={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
-    <Converter/>
+    <Min2hour/>
   </div>
   );
 }
