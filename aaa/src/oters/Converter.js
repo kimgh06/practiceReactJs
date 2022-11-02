@@ -20,7 +20,7 @@ function Converter(){
         setAmount(0);
       }}>Reset</button>
       <button onClick={()=>{
-        setFlipped((current) =>!current);
+        setFlipped((c) =>!c);
         setAmount(flipped ? amount * 60 : amount / 60);
       }}>Flips</button>
     </div>
