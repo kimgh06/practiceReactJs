@@ -25,9 +25,11 @@ function App() {
       <button onClick={plus} id='leftButton' className='buttons'>더하기</button>
       </div>
     </div>
-    <select value={-1} onChange={(e)=>{
+    <hr/>
+    <select onChange={(e)=>{
       setIndex(e.target.value);
     }}>
+      <option value={-1}>고르셈</option>
       <option value={0}>Minutes 2 Hours</option>
       <option value={1}>Km 2 Miles</option>
     </select>
