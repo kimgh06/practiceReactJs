@@ -32,6 +32,7 @@ function App() {
       <option value={1}>Km 2 Miles</option>
     </select>
     {index === '0'? <Min2hour/>:""}
+    {index === '1'? <Km2mile/>:""}
   </div>
   );
 }
