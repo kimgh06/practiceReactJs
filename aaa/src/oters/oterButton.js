@@ -1,9 +1,9 @@
 import React from 'react';
 
-function oterButton({text}){
+function oterButton(props){
   return(
     <>
-      <button>{text}</button>
+      <button>{props.text}</button>
     </>
   );
 }
