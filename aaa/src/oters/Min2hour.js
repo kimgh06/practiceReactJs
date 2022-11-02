@@ -16,7 +16,7 @@ function Min2hour(){
       <label htmlFor='hours'>hours : </label>
       <input value={flipped ? amount: amount/60} onChange={minchange} id='hours' placeholder='hours' type={'number'} disabled={!flipped}/>
       </div>
-      <button onMouseDown={()=>{
+      <button onClick={()=>{
         setAmount(0);
       }}>Reset</button>
       <button onClick={()=>{

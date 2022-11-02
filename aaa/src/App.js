@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import './App.scss';
 import Min2hour from './oters/Min2hour';
+import Km2mile from './oters/Km2mile';
 
 function App() {
   const [num, setNum] = useState(0);
