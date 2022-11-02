@@ -18,7 +18,9 @@ function Converter(){
       <button onMouseDown={()=>{
         setMinutes(0);
       }}>Reset</button>
-      <button>Flips</button>
+      <button onMouseDown={()=>{
+        
+      }}>Flips</button>
     </div>
   );
 }
