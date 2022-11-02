@@ -1,9 +1,9 @@
 import React from 'react';
 
-function oterButton(props){
+function oterButton({text, onClick, className}){
   return(
     <>
-      <button>{props.text}</button>
+      <button onClick={onClick} className={className}>{text}</button>
     </>
   );
 }
