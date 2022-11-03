@@ -1,5 +1,5 @@
 import React from 'react';
-import './oters.scss'
+import './oters.scss';
 
 function oterButton({text, onClick, className}){
   return(
