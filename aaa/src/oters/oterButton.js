@@ -1,10 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './oters.scss';
 
 function OterButton({text}){
+    const [a, setA] = useState(text);
+    const [t, setT] = useState(false);
     return(
     <>
-      <button>{text}</button>
+      <button onClick={()=>{
+        if(t){
+          setA("와");
+        }
+        else{
+          setA(text);
+        }
+        setT((c)=>!c);
+        }}>{a}</button>
     </>
   );
 }
