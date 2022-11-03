@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Min2hour from './Min2hour';
 import Km2mile from './Km2mile';
-import oterButton from './oterButton';
+import {oterButton, oterText} from './oterButton';
 import './oters.scss';
 
 function Oters(){
@@ -22,8 +22,8 @@ function Oters(){
     <div>
     <h2>합 : {num}</h2>
       <div>
-      <oterButton onClick={minus} className='buttons' text='빼기'/>
-      <oterButton onClick={plus} className='buttons' text='더하기'/>
+      <oterButton onClick={minus} Name='buttons' text='빼기'/>
+      <oterButton onClick={plus} Name='buttons' text='더하기'/>
       </div>
     </div>
     <hr/>
