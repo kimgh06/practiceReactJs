@@ -1,14 +1,16 @@
 import React from 'react';
 import './oters.scss';
 
-function oterButton({text, onClick, Name}){
-  const oterText ='';
-    
-  return(
+function OterButton({text}){
+    return(
     <>
-      <button onClick={onClick} className={Name}>{text}</button>
+      <button>{text}</button>
     </>
   );
 }
+const oterText = ()=>{return(
+    <></>
+);}
 
-export default oterButton;
+export default OterButton;
+export {oterText};
