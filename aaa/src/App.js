@@ -1,13 +1,7 @@
 import React,{useState} from 'react';
-import PropTypes from "prop-types";
 import Oters from './oters/Oters';
 import OterButton, {oterText} from './oters/oterButton';
 
-
-OterButton.propTypes = {
-  text:PropTypes.string.isRequired,
-  fontSize: PropTypes.number.isRequired,
-};
 function App() {
   return(<>
   <Oters/>

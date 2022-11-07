@@ -1,6 +1,11 @@
 import React,{useState} from 'react';
 import './oters.scss';
+import PropTypes from "prop-types";
 
+OterButton.propTypes = {
+    text:PropTypes.string.isRequired,
+    fontSize: PropTypes.number.isRequired,
+  };
 function OterButton({text, fontSize = 14}){
     const [a, setA] = useState(text);
     const [t, setT] = useState(false);
