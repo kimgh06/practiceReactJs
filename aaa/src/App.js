@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import PropTypes from "prop-types";
-import './App.scss';
 import Oters from './oters/Oters';
 import OterButton, {oterText} from './oters/oterButton';
 
