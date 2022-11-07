@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Min2hour from './Min2hour';
 import Km2mile from './Km2mile';
-import './oters.scss';
+import styled from'./oters.scss';
 
 function Oters(){
   const [num, setNum] = useState(0);
@@ -21,8 +21,8 @@ function Oters(){
     <div>
     <h2>합 : {num}</h2>
       <div>
-        <button onClick={minus} className='buttons' text='빼기'>빼</button>
-        <button onClick={plus} className='buttons' text='더하기'>더</button>
+        <button onClick={minus} className={styled.button} text='빼기'>빼</button>
+        <button onClick={plus} className={styled.button} text='더하기'>더</button>
       </div>
     </div>
     <hr/>
