@@ -6,14 +6,14 @@ import OterButton, {oterText} from './oters/oterButton';
 
 
 OterButton.propTypes = {
-  text:PropTypes.string,
-  fontSize: PropTypes.number,
+  text:PropTypes.string.isRequired,
+  fontSize: PropTypes.number.isRequired,
 };
 function App() {
   return(<>
   <Oters/>
   <OterButton text="321" fontSize={20}/>
-  <OterButton text={31} fontSize={"asdf"}/>
+  <OterButton text={31} />
   </>
   );
 }
