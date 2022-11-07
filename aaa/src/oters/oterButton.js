@@ -1,12 +1,15 @@
 import React,{useState} from 'react';
 import './oters.scss';
 
-function OterButton({text}){
+function OterButton({text, fontSize}){
     const [a, setA] = useState(text);
     const [t, setT] = useState(false);
     return(
     <>
-      <button onClick={()=>{
+      <button style={{
+          fontSize: fontSize,
+      }} 
+      onClick={()=>{
         if(t){
           setA("와 샌즈");
         }

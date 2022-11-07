@@ -6,7 +6,7 @@ import OterButton, {oterText} from './oters/oterButton';
 function App() {
   return(<>
   <Oters/>
-  <OterButton text="321"/>
+  <OterButton text="321" fontSize={20}/>
   </>
   );
 }
