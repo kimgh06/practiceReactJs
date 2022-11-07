@@ -8,7 +8,7 @@ function OterButton({text}){
     <>
       <button onClick={()=>{
         if(t){
-          setA("와");
+          setA("와 샌즈");
         }
         else{
           setA(text);
