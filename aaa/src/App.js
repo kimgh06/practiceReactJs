@@ -13,7 +13,7 @@ function App() {
   return(<>
   <Oters/>
   <OterButton text="321" fontSize={20}/>
-  <OterButton text="31" />
+  <OterButton text="318977" />
   </>
   );
 }
