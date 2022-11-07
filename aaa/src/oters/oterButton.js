@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './oters.scss';
 
-function OterButton({text, fontSize}){
+function OterButton({text, fontSize = 14}){
     const [a, setA] = useState(text);
     const [t, setT] = useState(false);
     return(
