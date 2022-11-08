@@ -16,7 +16,7 @@ function OterButton({text, fontSize = 14}){
       }} 
       onClick={()=>{
         if(t){
-          setA("와 샌즈");
+          setA("umm...");
         }
         else{
           setA(text);
