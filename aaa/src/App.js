@@ -4,7 +4,7 @@ import OterButton, {oterText} from './oters/oterButton';
 
 function App() {
   useEffect(()=>{
-    console.log("Nice to meet you");
+    console.log("반갑습네다.");
   },[]);
   return(<>
   <Oters/>
