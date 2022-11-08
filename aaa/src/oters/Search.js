@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Search() {
-    useEffect(() => {
-        console.log("반갑습네다.");
-    }, []);
-    return (
-        <>
-            <input type="text" placeholder='Search Here.' />
-        </>
-    );
+  useEffect(() => {
+    console.log("반갑습네다.");
+  }, []);
+  const [key, setKey] = useState("");
+  return (
+    <>
+      <input type="text" placeholder='Search Here.' onChange={(e) => {
+        setKey(e.target.value);
+      }} />
+    </>
+  );
 }
 
 export default Search;
