@@ -7,6 +7,7 @@ function App() {
     console.log("반갑습네다.");
   },[]);
   return(<>
+  <input type="text" placeholder='Search Here.'/>
   <Oters/>
   <OterButton text="321" fontSize={20}/>
   <OterButton text="318977" />
