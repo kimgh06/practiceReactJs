@@ -7,9 +7,13 @@ function Search() {
   const [key, setKey] = useState("");
   return (
     <>
-      <input type="text" placeholder='Search Here.' onChange={(e) => {
-        setKey(e.target.value);
-      }} />
+      <input
+        type="text"
+        value={key}
+        placeholder='Search Here.'
+        onChange={(e) => {
+          setKey(e.target.value);
+        }} />
     </>
   );
 }
