@@ -1,16 +1,14 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Oters from './oters/Oters';
-import OterButton, {oterText} from './oters/oterButton';
+import OterButton, { oterText } from './oters/oterButton';
+import Search from './oters/Search';
 
 function App() {
-  useEffect(()=>{
-    console.log("반갑습네다.");
-  },[]);
-  return(<>
-  <input type="text" placeholder='Search Here.'/>
-  <Oters/>
-  <OterButton text="321" fontSize={20}/>
-  <OterButton text="318977" />
+  return (<>
+    <Search />
+    <Oters />
+    <OterButton text="321" fontSize={20} />
+    <OterButton text="318977" />
   </>
   );
 }
