@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './oters.scss';
 import PropTypes from "prop-types";
 
 OterButton.propTypes = {

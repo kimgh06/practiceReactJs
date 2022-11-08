@@ -6,7 +6,8 @@ function Search() {
   }, []);
   const [key, setKey] = useState("");
   return (
-    <>
+    <div
+      className='search'>
       <input
         type="text"
         value={key}
@@ -14,7 +15,7 @@ function Search() {
         onChange={(e) => {
           setKey(e.target.value);
         }} />
-    </>
+    </div>
   );
 }
 

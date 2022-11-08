@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Oters from './oters/Oters';
-import OterButton, { oterText } from './oters/oterButton';
+import OterButton from './oters/oterButton';
 import Search from './oters/Search';
 import './App.scss';
 
