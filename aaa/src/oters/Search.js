@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Search() {
+function Search({ search }) {
   useEffect(() => {
     console.log("반갑습네다.");
   }, []);
@@ -11,7 +11,7 @@ function Search() {
       <input
         type="text"
         value={key}
-        placeholder='Search Here.'
+        placeholder={search}
         onChange={(e) => {
           setKey(e.target.value);
         }} />
