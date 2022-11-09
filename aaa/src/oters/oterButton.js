@@ -5,13 +5,14 @@ OterButton.propTypes = {
   text: PropTypes.string.isRequired,
   fontSize: PropTypes.number.isRequired,
 };
-function OterButton({ text, fontSize = 14 }) {
+function OterButton({ text, fontSize = 14, width = 200 }) {
   const [a, setA] = useState(text);
   const [t, setT] = useState(false);
   return (
-    <>
-      <button id='Oterbutton' style={{
+    <div>
+      <button className='Oterbutton' style={{
         fontSize: fontSize,
+        width: width,
       }}
         onClick={() => {
           if (t) {
@@ -22,7 +23,7 @@ function OterButton({ text, fontSize = 14 }) {
           }
           setT((c) => !c);
         }}>{a}</button>
-    </>
+    </div>
   );
 }
 const oterText = () => {
