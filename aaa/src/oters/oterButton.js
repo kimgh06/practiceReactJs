@@ -9,10 +9,12 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
   const [a, setA] = useState(text);
   const [t, setT] = useState(false);
   return (
-    <div>
+    <>
       <button className='Oterbutton' style={{
         fontSize: fontSize,
         width: width,
+        margin: 'auto',
+        display: 'block',
       }}
         onClick={() => {
           if (t) {
@@ -23,7 +25,7 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
           }
           setT((c) => !c);
         }}>{a}</button>
-    </div>
+    </>
   );
 }
 const oterText = () => {
