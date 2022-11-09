@@ -9,7 +9,7 @@ function App() {
     <Oters />
     <OterButton text="321" fontSize={20} />
     <OterButton text="318977" />
-    <Search search="search here." />
+    <Search />
   </>
   );
 }

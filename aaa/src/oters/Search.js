@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 
 function Search({ search }) {
   useEffect(() => {
@@ -18,5 +18,9 @@ function Search({ search }) {
     </div>
   );
 }
+
+Search.defaultProps = {
+  search: "Search Here.",
+};
 
 export default Search;
