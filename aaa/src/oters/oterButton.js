@@ -10,7 +10,7 @@ function OterButton({ text, fontSize = 14 }) {
   const [t, setT] = useState(false);
   return (
     <>
-      <button style={{
+      <button id='Oterbutton' style={{
         fontSize: fontSize,
       }}
         onClick={() => {
