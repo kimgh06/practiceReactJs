@@ -13,8 +13,6 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
       <button className='Oterbutton' style={{
         fontSize: fontSize,
         width: width,
-        margin: 'auto',
-        display: 'block',
       }}
         onClick={() => {
           if (t) {
