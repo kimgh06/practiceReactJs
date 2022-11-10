@@ -20,13 +20,13 @@ function Oters() {
         <h2>합 : {num}</h2>
         <div>
           <button onClick={minus} className='buttons' text='빼기' title='minus'>빼</button>
-          <button onClick={plus} className='buttons' text='더하기'>더</button>
+          <button onClick={plus} className='buttons' text='더하기' title='plus'>더</button>
         </div>
       </div>
       <hr />
       <select onChange={(e) => {
         setIndex(e.target.value);
-      }}>
+      }} title="시행할 작업 선택">
         <option value={-1}>고르셈</option>
         <option value={0}>Minutes 2 Hours</option>
         <option value={1}>Km 2 Miles</option>
