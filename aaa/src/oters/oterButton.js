@@ -15,7 +15,7 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
         width: width,
       }}
         onClick={() => {
-          if (t) {
+          if (!t) {
             setA("umm...");
           }
           else {
