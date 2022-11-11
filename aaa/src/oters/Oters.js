@@ -30,11 +30,9 @@ function Oters() {
         <option value={-1}>고르셈</option>
         <option value={0}>Minutes 2 Hours</option>
         <option value={1}>Km 2 Miles</option>
-        <option value={2}>와우 샌즈</option>
       </select>
       {index === '0' ? <Min2hour /> : ""}
       {index === '1' ? <Km2mile /> : ""}
-      {index === '2' ? <div>와우 샌즈</div> : ""}
     </div>
   );
 }
