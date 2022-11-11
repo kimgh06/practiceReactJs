@@ -26,11 +26,5 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
     </>
   );
 }
-const oterText = () => {
-  return (
-    <></>
-  );
-}
 
 export default OterButton;
-export { oterText };
