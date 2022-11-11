@@ -7,7 +7,7 @@ OterButton.propTypes = {
 };
 function OterButton({ text, fontSize = 14, width = 200 }) {
   const [a, setA] = useState(text);
-  const [t, setT] = useState(false);
+  const [t, setT] = useState(true);
   return (
     <>
       <button className='Oterbutton' style={{
@@ -15,7 +15,7 @@ function OterButton({ text, fontSize = 14, width = 200 }) {
         width: width,
       }}
         onClick={() => {
-          if (!t) {
+          if (t) {
             setA("umm...");
           }
           else {
