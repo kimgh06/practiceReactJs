@@ -6,12 +6,17 @@ function App() {
   const onC = (e) => {
     setTodo(e.target.value);
   }
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("Nice");
+  }
   return (
     <>
-      <form>
+      <form onSubmit={submit}>
         <div>
           <input onChange={onC} value={todo} type="text" placeholder='Type things to do' />
         </div>
+        <button>제출</button>
       </form>
     </>
   );
