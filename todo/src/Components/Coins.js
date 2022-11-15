@@ -13,7 +13,7 @@ function Coins() {
   }, []);
   return (
     <>
-      <h1>The Coins!</h1>
+      <h1>The Coins : {coins.length}</h1>
       {loading ? <b>Loading...</b> : ""}
       <ul>
         {coins.map((c, i) =>
