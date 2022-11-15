@@ -19,14 +19,19 @@ function App() {
   }
   console.log(todos);
   return (
-    <>
+    <div>
+      <h1>Todo list : {todos.length}</h1>
       <form onSubmit={submit}>
         <div>
           <input onChange={onC} value={todo} type="text" placeholder='Type things to do' />
+          <button>제출</button>
         </div>
-        <button>제출</button>
       </form>
-    </>
+      <hr />
+      {todos.map((i) => {
+        return i.toUpperCase();
+      })}
+    </div>
   );
 }
 
