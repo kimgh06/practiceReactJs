@@ -3,13 +3,21 @@ import './App.scss';
 
 function App() {
   const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
   const onC = (e) => {
     setTodo(e.target.value);
   }
   const submit = (e) => {
     e.preventDefault();
-    console.log("Nice");
+    if (todo === "") {
+      return;
+    }
+    setTodos((c) => [
+      todo, ...c
+    ])
+    setTodo("");
   }
+  console.log(todos);
   return (
     <>
       <form onSubmit={submit}>
