@@ -15,7 +15,7 @@ function Search({ search }) {
         value={key}
         placeholder={search}
         onChange={(e) => {
-          console.log("Search for", key);
+          console.log("Search for " + key);
           setKey(e.target.value);
         }} />
     </div>
@@ -23,7 +23,7 @@ function Search({ search }) {
 }
 
 Search.defaultProps = {
-  search: "Search Here.",
+  search: "Search.",
 };
 
 export default Search;
