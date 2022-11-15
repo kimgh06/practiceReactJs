@@ -29,9 +29,9 @@ function App() {
       </form>
       <hr />
       <ul>
-        {todos.map((i) => {
-          return <li>
-            {i.toUpperCase()}
+        {todos.map((i, n) => {
+          return <li key={n}>
+            {i}
           </li>
         })}
       </ul>
