@@ -36,6 +36,8 @@ body{
     &::placeholder{
       color: darkorange;
       font-weight: bold;
+      background-color: lightgray;
+      border-radius: 10px;
     }
   }
 }
