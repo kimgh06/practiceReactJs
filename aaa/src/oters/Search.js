@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 function Search({ search }) {
   useEffect(() => {
@@ -15,6 +15,7 @@ function Search({ search }) {
         value={key}
         placeholder={search}
         onChange={(e) => {
+          console.log("Search for", key);
           setKey(e.target.value);
         }} />
     </div>
