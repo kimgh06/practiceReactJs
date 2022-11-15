@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 function Search({ search }) {
   useEffect(() => {
     console.log("반갑습네다.");
   }, []);
   const [key, setKey] = useState("");
-  const [styled, setStyled] = useState("");
   return (
     <div
       className='search'
-      style={{ styled }}
     >
       <input
         type="text"
@@ -17,9 +16,6 @@ function Search({ search }) {
         placeholder={search}
         onChange={(e) => {
           setKey(e.target.value);
-          setStyled({
-            backgroundColor: "blue",
-          });
         }} />
     </div>
   );
