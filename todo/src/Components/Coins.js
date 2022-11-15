@@ -14,12 +14,13 @@ function Coins() {
   return (
     <>
       <h1>The Coins : {coins.length}</h1>
-      {loading ? <b>Loading...</b> : ""}
-      <ul>
-        {coins.map((c, i) =>
-          <li>{c.name} ({c.symbol}) : ${Math.ceil(c.quotes.USD.price * 100) / 100}</li>
-        )}
-      </ul>
+      {loading ? <b>Loading...</b> :
+        <select>
+          {coins.map((c, i) =>
+            <option>{c.name} ({c.symbol}) : ${Math.ceil(c.quotes.USD.price * 100) / 100}</option>
+          )}
+        </select>
+      }
     </>
   );
 }
