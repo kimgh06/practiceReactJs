@@ -17,7 +17,7 @@ function Coins() {
       {loading ? <b>Loading...</b> : ""}
       <ul>
         {coins.map((c, i) =>
-          <li>{c.name} ({c.symbol})</li>
+          <li>{c.name} ({c.symbol}) : ${Math.ceil(c.quotes.USD.price * 100) / 100}</li>
         )}
       </ul>
     </>
