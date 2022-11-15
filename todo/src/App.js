@@ -28,9 +28,13 @@ function App() {
         </div>
       </form>
       <hr />
-      {todos.map((i) => {
-        return i.toUpperCase();
-      })}
+      <ul>
+        {todos.map((i) => {
+          return <li>
+            {i.toUpperCase()}
+          </li>
+        })}
+      </ul>
     </div>
   );
 }
