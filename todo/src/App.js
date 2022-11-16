@@ -1,14 +1,14 @@
 import React from 'react';
 import Todo from './Components/Todo1';
 import Coins from './Components/Coins';
-import Movie from './Components/Movie';
+import Home from './Components/routes/Home';
 
 function App() {
   return (
     <>
       {/* <Todo /> */}
       {/* <Coins /> */}
-      <Movie />
+      <Home />
     </>
   );
 }
