@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Movie({ title, year, url, img, lang, summary, }) {
+function Movie({ title, year, url, img, lang, summary, gernes }) {
   return (
     <>
       <li>

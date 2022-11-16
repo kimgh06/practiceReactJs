@@ -28,6 +28,7 @@ function Home() {
             img={i.medium_cover_image}
             lang={i.lang}
             summary={i.summary}
+            genres={i.genres}
           />
         )}
       </ul>
