@@ -20,11 +20,14 @@ function Movie() {
       <h1>Movies</h1>
       <ul>
         {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
-          <li>
+          <li key={i.id}>
             {i.title} ({i.slug.substr(-4,)})
             <ul>
               <li>
                 language : ({i.language})
+              </li>
+              <li>
+                summary : {i.summary}
               </li>
               <li>
                 <a href={i.url} target='_blank'>Go to site</a>
