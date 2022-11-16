@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
-function Movie({ title, year, url, img, lang, summary, gernes }) {
+function Movie({ title, year, img, lang, summary, gernes }) {
   return (
     <>
       <li>
         {title} ({year})
         <ul>
-          <a href={url} target='_blank' title={`Go to see "${title}"`}>
+          <Link to='/movie' title={`Go to see "${title}"`}>
             <img src={img} />
-          </a>
+          </Link>
           <li>
             language : ({lang})
           </li>

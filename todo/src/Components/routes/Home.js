@@ -24,7 +24,6 @@ function Home() {
           <Movie key={i}
             title={i.title}
             year={i.slug.substr(-4,)}
-            url={i.url}
             img={i.medium_cover_image}
             lang={i.lang}
             summary={i.summary}
