@@ -5,7 +5,7 @@ function Detail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState([]);
-  const a = async () => {
+  const fetching = async () => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
     setMovie(json.data.movie);
@@ -13,12 +13,12 @@ function Detail() {
   }
   console.log(movie);
   useEffect(() => {
-    a();
-  }, []);
+    fetching();
+  });
   return (
     <>
       {loading ? <h1>Loading...</h1> :
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex' }} alt={`image of ${movie.title_long}`}>
           <div>
             <img src={movie.large_cover_image} />
           </div>
