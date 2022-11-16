@@ -1,14 +1,15 @@
 import React from 'react';
-import Todo from './Components/Todo1';
-import Coins from './Components/Coins';
 import Home from './Components/routes/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      {/* <Todo /> */}
-      {/* <Coins /> */}
-      <Home />
+      <Router>
+        <Switch path='/'>
+          <Home />
+        </Switch>
+      </Router>
     </>
   );
 }
