@@ -23,7 +23,7 @@ function Movie() {
           <li key={i.id}>
             {i.title} ({i.slug.substr(-4,)})
             <ul>
-              <a href={i.url} target='_blank' title="Go to site">
+              <a href={i.url} target='_blank' title={`Go to see "${i.title}"`}>
                 <img src={i.medium_cover_image} />
               </a>
               <li>
