@@ -22,6 +22,7 @@ function Home() {
       <ul>
         {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
           <Movie key={i}
+            id={i.id}
             title={i.title}
             year={i.slug.substr(-4,)}
             img={i.medium_cover_image}

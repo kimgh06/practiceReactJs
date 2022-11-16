@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-function Movie({ title, year, img, lang, summary, gernes }) {
+function Movie({ title, year, img, lang, summary, id }) {
   return (
     <>
       <li>
         {title} ({year})
         <ul>
-          <Link to='/movie' title={`Go to see "${title}"`}>
+          <Link to={`/movie/${id}`} title={`Go to see "${title}"`}>
             <img src={img} />
           </Link>
           <li>
