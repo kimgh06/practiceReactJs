@@ -21,7 +21,7 @@ function Movie() {
       <ul>
         {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
           <li>
-            {i.title} ({i.date_uploaded.substr(0, 4)})
+            {i.title} ({i.slug.substr(-4,)})
             <ul>
               <li>
                 language : ({i.language})
