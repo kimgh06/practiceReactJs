@@ -23,6 +23,7 @@ function Movie() {
           <li key={i.id}>
             {i.title} ({i.slug.substr(-4,)})
             <ul>
+              <img src={i.medium_cover_image} />
               <li>
                 language : ({i.language})
               </li>
