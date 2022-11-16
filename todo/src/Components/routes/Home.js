@@ -26,7 +26,7 @@ function Home() {
             title={i.title}
             year={i.slug.substr(-4,)}
             img={i.medium_cover_image}
-            lang={i.lang}
+            lang={i.language}
             summary={i.summary}
             genres={i.genres}
           />

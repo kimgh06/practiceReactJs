@@ -3,11 +3,13 @@ import { Link, useParams } from 'react-router-dom'
 
 function Detail() {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState([]);
   const a = async () => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)).json();
     setMovie(json.data.movie);
+    setLoading(false);
   }
   console.log(movie);
   useEffect(() => {
@@ -15,24 +17,31 @@ function Detail() {
   }, []);
   return (
     <>
-      <div style={{ display: 'flex' }}>
-        <div>
-          <img src={movie.large_cover_image} />
-        </div>
-        <div>
-          <Link to='/'>
-            <button>Return to Home</button>
-          </Link>
-          <ul>
-            <span>
-              <h1>{movie.title_long}</h1>
-            </span>
-            <li>
-              Description : "{movie.description_intro}"
-            </li>
-          </ul>
-        </div>
-      </div>
+      {loading ? <h1>Loading...</h1> :
+        <div style={{ display: 'flex' }}>
+          <div>
+            <img src={movie.large_cover_image} />
+          </div>
+          <div>
+            <Link to='/'>
+              <button>Return to Home</button>
+            </Link>
+            <ul>
+              <span>
+                <h1>{movie.title_long}</h1>
+              </span>
+              <li>Genres :</li>
+              <ul>
+                {movie.genres && movie.genres.map((i, n) =>
+                  <li>"{i}"</li>
+                )}
+              </ul>
+              <li>
+                Description : "{movie.description_intro}"
+              </li>
+            </ul>
+          </div>
+        </div>}
     </>
   );
 }
