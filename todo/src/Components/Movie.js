@@ -4,22 +4,20 @@ import PropTypes from 'prop-types';
 
 function Movie({ title, year, img, lang, summary, id, genres }) {
   return (
-    <>
-      <li>
-        {title} ({year})
-        <ul>
-          <Link to={`/movie/${id}`} title={`Go to see "${title}"`}>
-            <img src={img} />
-          </Link>
-          <li>
-            language : ({lang})
-          </li>
-          <li>
-            summary : {summary.length < 255 ? summary : `${summary.slice(0, 255)}...`}
-          </li>
-        </ul>
-      </li>
-    </>
+    <div id="Movie">
+      <span>{title} ({year})</span>
+      <ul>
+        <Link to={`/movie/${id}`} title={`Go to see "${title}"`}>
+          <img src={img} />
+        </Link>
+        <li>
+          language : ({lang})
+        </li>
+        <li>
+          summary : {summary.length < 255 ? summary : `${summary.slice(0, 255)}...`}
+        </li>
+      </ul>
+    </div>
   );
 }
 
