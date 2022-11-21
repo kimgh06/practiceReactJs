@@ -6,28 +6,28 @@
   margin-top: 7%;
   display: flex;
   flex-wrap: wrap;
-}
-.Movie{ 
-  width: 45%;
-  margin-right: 5%;
-  margin-bottom: 10%;
-  display: flex;
-  img{
-    box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);    
-  }
-  b{
-    font-size: 20px;
-  }
-  ul{
-    li::marker{
-      content: "◆";
+  .Movie{ 
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    display: flex;
+    img{
+      box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);    
     }
-    li{
-      margin: 5px 0px;
+    b{
+      font-size: 20px;
     }
-  }
-  div{
-    padding-left: 1em;
-    margin: auto;
+    ul{
+      li::marker{
+        content: "◆";
+      }
+      li{
+        margin: 5px 0px;
+      }
+    }
+    div{
+      padding-left: 1em;
+      margin: auto;
+    }
   }
 }
