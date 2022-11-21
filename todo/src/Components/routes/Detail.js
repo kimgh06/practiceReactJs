@@ -22,7 +22,7 @@ function Detail() {
           <div>
             <img src={movie.large_cover_image} />
           </div>
-          <div>
+          <div style={{ width: "45%", margin: "1em", }}>
             <Link to='/'>
               <button>Return to Home</button>
             </Link>
