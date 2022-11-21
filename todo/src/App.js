@@ -1,18 +1,21 @@
 import React from 'react';
 import Home from './Components/routes/Home';
 import Detail from './Components/routes/Detail';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route path='/movie/:id'>
+          <Route path='/practiceReactJs/movie/:id'>
             <Detail />
           </Route>
-          <Route path='/'>
+          <Route path='/practiceReactJs/'>
             <Home />
+          </Route>
+          <Route path='/'>
+            <Redirect to="/practiceReactJs/" />
           </Route>
         </Switch>
       </Router>

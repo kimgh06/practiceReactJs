@@ -23,7 +23,7 @@ function Detail() {
             <img src={movie.large_cover_image} />
           </div>
           <div style={{ width: "45%", margin: "1em", }}>
-            <Link to='/'>
+            <Link to='/practiceReactJs/'>
               <button>Return to Home</button>
             </Link>
             <ul>

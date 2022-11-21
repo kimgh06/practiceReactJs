@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Movie({ title, year, img, lang, summary, id }) {
   return (
     <div className={`Movie ${id}`}>
-      <Link to={`/movie/${id}`} title={`Go to see more "${title}"`}>
+      <Link to={`/practiceReactJs/movie/${id}`} title={`Go to see more "${title}"`}>
         <img src={img} />
       </Link>
       <div>
