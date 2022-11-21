@@ -15,7 +15,7 @@ function Movie({ title, year, img, lang, summary, id, genres }) {
             language : ({lang})
           </li>
           <li>
-            summary : {summary.length < 255 ? summary : `${summary.slice(0, 255)}...`}
+            summary : {summary.length < 255 ? summary : `${summary.slice(0, 200)}...`}
           </li>
         </ul>
       </div>
