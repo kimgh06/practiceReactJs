@@ -22,7 +22,7 @@ function Home() {
       <h1 id="title">Movies</h1>
       <ul id="main">
         {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
-          <Movie key={i}
+          <Movie key={i.id}
             id={i.id}
             title={i.title}
             year={i.slug.substr(-4,)}
