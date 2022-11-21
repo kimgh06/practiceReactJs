@@ -18,7 +18,7 @@ function Detail() {
   return (
     <>
       {loading ? <h1>Loading...</h1> :
-        <div style={{ display: 'flex' }} alt={`image of ${movie.title_long}`}>
+        <div style={{ display: 'flex', margin: "-8px" }} alt={`image of ${movie.title_long}`}>
           <div>
             <img src={movie.large_cover_image} />
           </div>

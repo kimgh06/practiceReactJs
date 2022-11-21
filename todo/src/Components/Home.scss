@@ -1,30 +1,33 @@
 #title{
-  position: fixed;
-  margin-top: -5%;
+  text-align: center;
 }
 
 #main{
   margin-top: 7%;
-  display: flex;}
-  #Movie{
-    width: 30%;
-    img{
-      box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);    
+  display: flex;
+  flex-wrap: wrap;
+}
+.Movie{ 
+  width: 45%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+  display: flex;
+  img{
+    box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);    
+  }
+  b{
+    font-size: 20px;
+  }
+  ul{
+    li::marker{
+      content: "◆";
     }
-    b{
-      font-size: 20px;
-    }
-    ul{
-      margin-left: -17%;
-      li::marker{
-        content: "◆";
-      }
-      li{
-        margin: 5px 0px;
-      }
-    }
-    &+&{
-      display: block;
-      margin-left: 30px;
+    li{
+      margin: 5px 0px;
     }
   }
+  div{
+    padding-left: 1em;
+    margin: auto;
+  }
+}
