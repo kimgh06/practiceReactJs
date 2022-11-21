@@ -6,10 +6,10 @@ function Movie({ title, year, img, lang, summary, id, genres }) {
   return (
     <div id="Movie">
       <span>{title} ({year})</span>
+      <Link to={`/movie/${id}`} title={`Go to see more "${title}"`}>
+        <img src={img} />
+      </Link>
       <ul>
-        <Link to={`/movie/${id}`} title={`Go to see "${title}"`}>
-          <img src={img} />
-        </Link>
         <li>
           language : ({lang})
         </li>
