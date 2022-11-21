@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function Movie({ title, year, img, lang, summary, id, genres }) {
+function Movie({ title, year, img, lang, summary, id }) {
   return (
-    <div className="Movie">
+    <div className={`Movie ${id}`}>
       <Link to={`/movie/${id}`} title={`Go to see more "${title}"`}>
         <img src={img} />
       </Link>
@@ -28,7 +28,6 @@ Movie.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf().isRequired,
 };
 
 export default Movie;
