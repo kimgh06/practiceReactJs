@@ -20,8 +20,8 @@ function Home() {
   return (
     <>
       <h1>Movies</h1>
-      <ul>
-        {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
+      <ul id="main">
+        {loading ? <h2>Loading...</h2> : movies.map((i, n) =>
           <Movie key={i}
             id={i.id}
             title={i.title}
