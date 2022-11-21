@@ -7,7 +7,7 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     const response = await fetch(
-      "https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year"
+      "https://yts.mx/api/v2/list_movies.json?minimum_rating=7.5&sort_by=year"
     );
     const json = await response.json();
     setMovies(json.data.movies);
@@ -19,9 +19,9 @@ function Home() {
   console.log(movies);
   return (
     <>
-      <h1>Movies</h1>
+      <h1 id="title">Movies</h1>
       <ul id="main">
-        {loading ? <h2>Loading...</h2> : movies.map((i, n) =>
+        {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
           <Movie key={i}
             id={i.id}
             title={i.title}
