@@ -11,12 +11,16 @@ function Movie({ title, year, img, lang, summary, id }) {
       <div>
         <h2>{title} ({year})</h2>
         <ul>
-          <li>
-            language : ({lang})
-          </li>
-          <li>
-            summary : {summary.length < 255 ? summary : `${summary.slice(0, 200)}...`}
-          </li>
+          {lang === "" ? "" :
+            <li>
+              language : ({lang})
+            </li>
+          }
+          {summary === "" ? "" :
+            <li>
+              summary : {summary.length < 255 ? summary : `${summary.slice(0, 180)}...`}
+            </li>
+          }
         </ul>
       </div>
     </div>
