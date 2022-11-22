@@ -9,7 +9,7 @@ function Movie({ title, year, img, lang, summary, id }) {
         <img src={img} />
       </Link>
       <div>
-        <b>{title} ({year})</b>
+        <h2>{title} ({year})</h2>
         <ul>
           <li>
             language : ({lang})

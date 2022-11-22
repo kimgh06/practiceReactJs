@@ -4,6 +4,7 @@
 
 #main{
   margin-top: 7%;
+  margin-left: 1ch;
   display: flex;
   flex-wrap: wrap;
   .Movie{ 
@@ -14,14 +15,13 @@
     img{
       box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
     }
-    b{
-      font-size: 20px;
-    }
     ul{
+      margin-left: -3ch;
       li::marker{
         content: "◆";
       }
       li{
+        padding-inline-start: 1ch;
         margin: 5px 0px;
       }
     }
