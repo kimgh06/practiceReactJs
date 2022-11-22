@@ -1,5 +1,17 @@
+body{
+  background-color: ivory;
+}
+
 #title{
   text-align: center;
+  width: 15ch;
+  height: 5.5ch;
+  margin: auto;
+  background-color: gold;
+  border-radius: 3ch;
+  h1{
+    color: #121212;
+  }
 }
 
 #main{

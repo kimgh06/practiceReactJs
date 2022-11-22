@@ -18,13 +18,21 @@ function Detail() {
   return (
     <>
       {loading ? <h1>Loading...</h1> :
-        <div style={{ display: 'flex', margin: "-8px" }} alt={`image of ${movie.title_long}`}>
-          <div>
+        <div style={{ display: 'flex', margin: "-8px" }}>
+          <div alt={`image of ${movie.title_long}`} title={`image of ${movie.title_long}`}>
             <img src={movie.large_cover_image} />
           </div>
           <div style={{ width: "45%", margin: "1em", }}>
             <Link to='/practiceReactJs/'>
-              <button>Return to Home</button>
+              <button
+                style={{
+                  height: "5ch",
+                  borderRadius: "3ch",
+                  border: "none",
+                  backgroundColor: "gold",
+                  color: "#121212",
+                }}
+              ><b>Return to Home</b></button>
             </Link>
             <ul>
               <span>

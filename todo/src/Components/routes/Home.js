@@ -19,7 +19,9 @@ function Home() {
   console.log(movies);
   return (
     <>
-      <h1 id="title">Movies</h1>
+      <div id="title">
+        <h1>Movies</h1>
+      </div>
       <ul id="main">
         {loading ? <h1>Loading...</h1> : movies.map((i, n) =>
           <Movie key={i.id}
