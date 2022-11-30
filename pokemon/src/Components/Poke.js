@@ -9,6 +9,7 @@ function Poke() {
   const [loading, setLoading] = useState(true);
   const fetching = async () => {
     try {
+      setLoading(true);
       const json = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
       const species = await (await fetch(json.species.url)).json();
       setPoke(json);
@@ -46,11 +47,11 @@ function Poke() {
             <select onChange={(e) => {
               setLang(e.target.value);
             }}>
-              {species.names.map((i, n) => <option value={n}>{i.language.name}</option>)}
+              {species.names.map((i, n) => n !== 2 ? <option value={n}>{i.language.name}</option> : <option value={n} selected>{i.language.name}</option>)}
             </select>
           </div>
+          <img src={poke.sprites.back_default} />
           <img src={poke.sprites.front_default} />
-          <img src={poke.sprites.front_shiny} />
           <li>
             {(poke.height) / 10} m
           </li>
