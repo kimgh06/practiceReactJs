@@ -5,29 +5,35 @@ function Poke() {
   const [poke, setPoke] = useState([]);
   const [inputs, setInput] = useState(id);
   const fetching = async () => {
-    const json = await (
-      await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
-    setPoke(json);
-    console.log(json);
+    try {
+      const json = await (
+        await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
+      setPoke(json);
+      console.log(json);
+    } catch {
+      alert("요청하신 데이터를 찾지 못했습니다.");
+    }
   }
   useEffect(() => {
     fetching();
   }, []);
-  const Submit = (e) => {
-    e.preventDefault();
-    setId(inputs);
-    fetching();
-  }
   return (
     <div>
-      <form onSubmit={Submit}>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        fetching();
+      }}>
         <input value={inputs} onChange={(e) => {
           setInput(e.target.value);
+          setId(e.target.value);
         }} />
         <button>Submit</button>
       </form>
       <ul>
-        {poke.name}
+        <h3>
+          {poke.name}
+        </h3>
+        <img src={`${poke.sprites.front_default}`} />
         <li>
           {Math.ceil(poke.height * 30.48) / 100} m
         </li>
