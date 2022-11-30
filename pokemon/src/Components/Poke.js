@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 function Poke() {
   const [id, setId] = useState(25);
-  const [lang, setLang] = useState(2);
+  const [langNo, setLangNo] = useState(2);
+  const [langStr, setLangStr] = useState();
+  const [name, setName] = useState();
   const [poke, setPoke] = useState([]);
   const [species, setSpecies] = useState([]);
-  const [inputs, setInput] = useState(id);
   const [loading, setLoading] = useState(true);
   const fetching = async () => {
     try {
@@ -13,6 +14,7 @@ function Poke() {
       const json = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
       const species = await (await fetch(json.species.url)).json();
       setPoke(json);
+      setName(`${json.name.charAt(0).toUpperCase()}${json.name.slice(1)}`);
       setSpecies(species);
       console.log(json, species);
       setLoading(false);
@@ -29,10 +31,9 @@ function Poke() {
         e.preventDefault();
         fetching();
       }}>
-        <input value={inputs} onChange={(e) => {
-          setInput(e.target.value);
+        <input value={id} onChange={(e) => {
           setId(e.target.value);
-        }} placeholder='id or name' />
+        }} placeholder='Type id or name in English' />
         <button>Submit</button>
       </form>
       {loading ? <h2>Loading...</h2> :
@@ -41,22 +42,25 @@ function Poke() {
             display: 'flex',
           }}>
             <span>
-              {poke.id} {species.names[lang].name}
+              {poke.id} {species.names[langNo].name}
             </span>
             &nbsp;
-            <select defaultValue={2} onChange={(e) => {
-              setLang(e.target.value);
+            <select defaultValue={langNo} onChange={(e) => {
+              setLangNo(e.target.value);
+              setLangStr(species.names[langNo].language);
+              const a = species.names.indexOf(species.names[langNo]);
+              console.log(a);
             }} title='Select your language'>
               {species.names.map((i, n) => <option key={n} value={n}>{i.language.name}</option>)}
             </select>
           </div>
-          <img src={poke.sprites.back_default} title={`The back of ${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`} />
-          <img src={poke.sprites.front_default} title={`The front of ${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`} />
+          <img src={poke.sprites.back_default} title={`The back of ${name}`} />
+          <img src={poke.sprites.front_default} title={`The front of ${name}`} />
           <li>
-            {`${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`}'s height : {(poke.height) / 10} m
+            {`${name}`}'s height : {(poke.height) / 10} m
           </li>
           <li>
-            {`${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`}'s weight : {(poke.weight) / 10} kg
+            {`${name}`}'s weight : {(poke.weight) / 10} kg
           </li>
         </ul>
       }
