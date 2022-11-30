@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 function Poke() {
   const [id, setId] = useState(25);
   const [langNo, setLangNo] = useState(2);
-  const [langStr, setLangStr] = useState();
   const [name, setName] = useState();
   const [poke, setPoke] = useState([]);
   const [species, setSpecies] = useState([]);
@@ -42,16 +41,13 @@ function Poke() {
             display: 'flex',
           }}>
             <span>
-              {poke.id} {species.names[langNo].name}
+              {poke.id} {species.names[langNo].name} { }
             </span>
             &nbsp;
             <select defaultValue={langNo} onChange={(e) => {
               setLangNo(e.target.value);
-              setLangStr(species.names[langNo].language);
-              const a = species.names.indexOf(species.names[langNo]);
-              console.log(a);
             }} title='Select your language'>
-              {species.names.map((i, n) => <option key={n} value={n}>{i.language.name}</option>)}
+              {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
             </select>
           </div>
           <img src={poke.sprites.back_default} title={`The back of ${name}`} />
