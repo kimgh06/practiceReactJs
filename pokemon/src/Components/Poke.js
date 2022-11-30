@@ -41,7 +41,7 @@ function Poke() {
             display: 'flex',
           }}>
             <span>
-              {species.names[lang].name}
+              {poke.id} {species.names[lang].name}
             </span>
             &nbsp;
             <select defaultValue={2} onChange={(e) => {
@@ -50,8 +50,8 @@ function Poke() {
               {species.names.map((i, n) => <option key={n} value={n}>{i.language.name}</option>)}
             </select>
           </div>
-          <img src={poke.sprites.back_default} title={`The back of ${poke.name}`} />
-          <img src={poke.sprites.front_default} title={`The front of ${poke.name}`} />
+          <img src={poke.sprites.back_default} title={`The back of ${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`} />
+          <img src={poke.sprites.front_default} title={`The front of ${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`} />
           <li>
             {`${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`}'s height : {(poke.height) / 10} m
           </li>
