@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 function Poke() {
   const [id, setId] = useState(25);
   const [langNo, setLangNo] = useState(2);
+  const [generation, setGeneration] = useState();
   const [name, setName] = useState();
   const [poke, setPoke] = useState([]);
   const [species, setSpecies] = useState([]);
@@ -15,6 +16,7 @@ function Poke() {
       setPoke(json);
       setName(`${json.name.charAt(0).toUpperCase()}${json.name.slice(1)}`);
       setSpecies(species);
+      setGeneration(species.generation.url.slice(-2, -1));
       console.log(json, species);
       setLoading(false);
     } catch {
@@ -52,6 +54,11 @@ function Poke() {
           </div>
           <img src={poke.sprites.back_default} title={`The back of ${name}`} />
           <img src={poke.sprites.front_default} title={`The front of ${name}`} />
+          <li>
+            {generation}{
+              generation % 20 === 1 ? 'st' : generation % 20 === 2 ? 'nd' : generation % 20 === 3 ? 'rd' : 'th'
+            } generation
+          </li>
           <li>
             {`${name}`}'s height : {(poke.height) / 10} m
           </li>
