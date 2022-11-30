@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 
 function Poke() {
   const [id, setId] = useState(25);
+  const [lang, setLang] = useState(2);
   const [poke, setPoke] = useState([]);
+  const [species, setSpecies] = useState([]);
   const [inputs, setInput] = useState(id);
   const [loading, setLoading] = useState(true);
   const fetching = async () => {
     try {
-      const json = await (
-        await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
+      const json = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
+      const species = await (await fetch(json.species.url)).json();
       setPoke(json);
-      console.log(json);
+      setSpecies(species);
+      console.log(json, species);
       setLoading(false);
     } catch {
       alert("요청하신 데이터를 찾지 못했습니다.");
@@ -33,15 +36,26 @@ function Poke() {
       </form>
       {loading ? <h2>Loading...</h2> :
         <ul>
-          <h3>
-            {poke.name}
-          </h3>
+          <div style={{
+            display: 'flex',
+          }}>
+            <span>
+              {species.names[lang].name}
+            </span>
+            &nbsp;
+            <select onChange={(e) => {
+              setLang(e.target.value);
+            }}>
+              {species.names.map((i, n) => <option value={n}>{i.language.name}</option>)}
+            </select>
+          </div>
           <img src={poke.sprites.front_default} />
+          <img src={poke.sprites.front_shiny} />
           <li>
-            {Math.ceil(poke.height * 30.48) / 100} m
+            {(poke.height) / 10} m
           </li>
           <li>
-            {Math.ceil(poke.weight * 45.3592) / 100} kg
+            {(poke.weight) / 10} kg
           </li>
         </ul>
       }
