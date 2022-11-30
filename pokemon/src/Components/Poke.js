@@ -44,19 +44,19 @@ function Poke() {
               {species.names[lang].name}
             </span>
             &nbsp;
-            <select onChange={(e) => {
+            <select defaultValue={2} onChange={(e) => {
               setLang(e.target.value);
             }}>
-              {species.names.map((i, n) => n !== 2 ? <option value={n}>{i.language.name}</option> : <option value={n} selected='true'>{i.language.name}</option>)}
+              {species.names.map((i, n) => <option key={n} value={n}>{i.language.name}</option>)}
             </select>
           </div>
           <img src={poke.sprites.back_default} title={`The back of ${poke.name}`} />
           <img src={poke.sprites.front_default} title={`The front of ${poke.name}`} />
           <li>
-            {(poke.height) / 10} m
+            {`${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`}'s height : {(poke.height) / 10} m
           </li>
           <li>
-            {(poke.weight) / 10} kg
+            {`${poke.name.charAt(0).toUpperCase()}${poke.name.slice(1)}`}'s weight : {(poke.weight) / 10} kg
           </li>
         </ul>
       }
