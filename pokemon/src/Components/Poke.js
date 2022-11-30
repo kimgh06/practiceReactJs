@@ -17,7 +17,7 @@ function Poke() {
       console.log(json, species);
       setLoading(false);
     } catch {
-      alert("요청하신 데이터를 찾지 못했습니다.");
+      alert("요청한 데이터를 찾지 못했습니다.");
     }
   }
   useEffect(() => {
@@ -32,7 +32,7 @@ function Poke() {
         <input value={inputs} onChange={(e) => {
           setInput(e.target.value);
           setId(e.target.value);
-        }} />
+        }} placeholder='id or name' />
         <button>Submit</button>
       </form>
       {loading ? <h2>Loading...</h2> :
@@ -46,7 +46,7 @@ function Poke() {
             &nbsp;
             <select defaultValue={2} onChange={(e) => {
               setLang(e.target.value);
-            }}>
+            }} title='Select your language'>
               {species.names.map((i, n) => <option key={n} value={n}>{i.language.name}</option>)}
             </select>
           </div>
