@@ -41,7 +41,7 @@ function Poke() {
             display: 'flex',
           }}>
             <span>
-              {poke.id} {species.names[langNo].name} { }
+              {poke.id} {species.names[langNo].name}
             </span>
             &nbsp;
             <select defaultValue={langNo} onChange={(e) => {
