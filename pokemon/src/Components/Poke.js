@@ -38,44 +38,55 @@ function Poke() {
         <button>Submit</button>
       </form>
       {loading ? <h2>Loading...</h2> :
-        <ul>
-          <div style={{
-            display: 'flex',
-          }}>
-            <span>
-              {poke.id} {species.names[langNo].name}
-            </span>
-            &nbsp;
-            <select defaultValue={langNo} onChange={(e) => {
-              setLangNo(e.target.value);
-            }} title='Select your language'>
-              {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
-            </select>
-          </div>
-          <img src={poke.sprites.back_default} title={`The back of ${name}`} />
-          <img src={poke.sprites.front_default} title={`The front of ${name}`} />
-          <li>
-            {generation}
-            {(() => {
-              switch (generation % 20) {
-                case 1:
-                  return 'st';
-                case 2:
-                  return 'nd';
-                case 3:
-                  return 'rd';
-                default:
-                  return 'th';
-              }
-            })()} generation
-          </li>
-          <li>
-            {`${name}`}'s height : {(poke.height) / 10} m
-          </li>
-          <li>
-            {`${name}`}'s weight : {(poke.weight) / 10} kg
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <div style={{
+              display: 'flex',
+            }}>
+              <span>
+                <b style={{ color: `${species.color.name}` }}>{poke.id}</b> {species.names[langNo].name}
+              </span>
+              &nbsp;
+              <select defaultValue={langNo} onChange={(e) => {
+                setLangNo(e.target.value);
+              }} title='Select your language'>
+                {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
+              </select>
+            </div>
+            <img src={poke.sprites.back_default} title={`The back of ${name}`} />
+            <img src={poke.sprites.front_default} title={`The front of ${name}`} />
+            <li>
+              {generation}
+              {(() => {
+                switch (generation % 20) {
+                  case 1:
+                    return 'st';
+                  case 2:
+                    return 'nd';
+                  case 3:
+                    return 'rd';
+                  default:
+                    return 'th';
+                }
+              })()} generation
+            </li>
+            <li>
+              {`${name}`}'s height : {(poke.height) / 10} m
+            </li>
+            <li>
+              {`${name}`}'s weight : {(poke.weight) / 10} kg
+            </li>
+            {
+              species.evolves_from_species &&
+              <li>
+                generation from : <span onClick={() => {
+                  setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
+                  console.log(id);
+                }}>{species.evolves_from_species.url.slice(42, -1)} {species.evolves_from_species.name}</span >
+              </li>
+            }
+          </ul>
+        </div>
       }
     </div>
   );
