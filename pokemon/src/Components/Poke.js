@@ -85,7 +85,7 @@ function Poke() {
             {
               species.evolves_from_species &&
               <li>
-                evolves from : <span onClick={() => {
+                evolved from : <span onClick={() => {
                   setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
                   console.log(id);
                 }}>{species.evolves_from_species.url.slice(42, -1)} {species.evolves_from_species.name}</span >
