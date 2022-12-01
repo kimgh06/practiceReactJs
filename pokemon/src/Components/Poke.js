@@ -45,11 +45,8 @@ function Poke() {
               display: 'flex',
             }}>
               <span>
-                <b id='pokeNum' style={{
-                  color: `${species.color.name}`,
-                  textShadowColor: 'black',
-                  textShadowOffset: { width: -1, height: 0 },
-                  textShadowRadius: '10'
+                <b className='pokeNum' style={{
+                  color: `${species.color.name}`
                 }}>{poke.id}</b> {species.names[langNo].name}
               </span>
               &nbsp;
