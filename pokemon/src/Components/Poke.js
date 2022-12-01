@@ -55,9 +55,19 @@ function Poke() {
           <img src={poke.sprites.back_default} title={`The back of ${name}`} />
           <img src={poke.sprites.front_default} title={`The front of ${name}`} />
           <li>
-            {generation}{
-              generation % 20 === 1 ? 'st' : generation % 20 === 2 ? 'nd' : generation % 20 === 3 ? 'rd' : 'th'
-            } generation
+            {generation}
+            {(() => {
+              switch (generation % 20) {
+                case 1:
+                  return 'st';
+                case 2:
+                  return 'nd';
+                case 3:
+                  return 'rd';
+                default:
+                  return 'th';
+              }
+            })()} generation
           </li>
           <li>
             {`${name}`}'s height : {(poke.height) / 10} m
