@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Poke.scss';
 
 function Poke() {
   const [id, setId] = useState(25);
@@ -44,7 +45,12 @@ function Poke() {
               display: 'flex',
             }}>
               <span>
-                <b style={{ color: `${species.color.name}` }}>{poke.id}</b> {species.names[langNo].name}
+                <b id='pokeNum' style={{
+                  color: `${species.color.name}`,
+                  textShadowColor: 'black',
+                  textShadowOffset: { width: -1, height: 0 },
+                  textShadowRadius: '10'
+                }}>{poke.id}</b> {species.names[langNo].name}
               </span>
               &nbsp;
               <select defaultValue={langNo} onChange={(e) => {
