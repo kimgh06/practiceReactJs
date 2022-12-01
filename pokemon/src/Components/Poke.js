@@ -100,7 +100,7 @@ function Poke() {
             {
               species.habitat !== null ? (evolve.chain.evolves_to.length && species.habitat.name !== 'rare' ? (evolve.chain.evolves_to[0].evolves_to.length ?
                 evolve.chain.evolves_to[0].species.name === poke.name &&
-                < li > evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
                   &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
                 </li> : '') : '') : ''
             }
