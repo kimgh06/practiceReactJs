@@ -92,24 +92,21 @@ function Poke() {
               </li>
             }
             {
-              evolve.chain.species.name === poke.name || species.is_baby &&
-              <li>evolves to : {evolve.chain.evolves_to[0].species.url.slice(42, -1)}
-                &nbsp;{evolve.chain.evolves_to[0].species.name}
-              </li>
+              species.habitat.name !== 'rare' ? evolve.chain.species.name === poke.name && evolve.chain.evolves_to.length &&
+                <li>evolves to : {evolve.chain.evolves_to[0].species.url.slice(42, -1)}
+                  &nbsp;{evolve.chain.evolves_to[0].species.name}
+                </li> : ''
             }
-            {() => {
-              try {
-                if (evolve.chain.evolves_to[0].species.name === poke.name)
-                  return (
-                    <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
-                      &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
-                    </li>);
-              } catch { alert('없음'); }
-            }}
+            {
+              species.habitat.name !== 'rare' ? evolve.chain.evolves_to[0].species.name === poke.name && evolve.chain.evolves_to[0].evolves_to.length && evolve.chain.evolves_to.length &&
+                < li > evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                  &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
+                </li> : ''
+            }
           </ul>
         </div>
       }
-    </div>
+    </div >
   );
 }
 
