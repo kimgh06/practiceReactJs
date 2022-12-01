@@ -31,7 +31,7 @@ function Poke() {
     fetching();
   }, []);
   return (
-    <div>
+    <div className='Poke'>
       <form onSubmit={(e) => {
         e.preventDefault();
         fetching();
@@ -97,12 +97,14 @@ function Poke() {
                 &nbsp;{evolve.chain.evolves_to[0].species.name}
               </li>
             }
-            {/* {
-              evolve.chain.evolves_to[0].species.name === poke.name && evolve.chain.evolves_to[0] &&
-              <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
-                &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
-              </li>
-            } */}
+            {() => {
+              try {
+                return (evolve.chain.evolves_to[0].species.name === poke.name &&
+                  <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                    &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
+                  </li>);
+              } catch { alert('없음'); }
+            }}
           </ul>
         </div>
       }
