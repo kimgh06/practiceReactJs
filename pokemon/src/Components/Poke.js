@@ -3,20 +3,23 @@ import './Poke.scss';
 
 function Poke() {
   const [id, setId] = useState(25);
-  const [langNo, setLangNo] = useState(2);
-  const [generation, setGeneration] = useState();
-  const [name, setName] = useState();
+  const [langNo, setLangNo] = useState(2); //언어 번호
+  const [generation, setGeneration] = useState(); //세대
+  const [name, setName] = useState(); //포켓몬 이름
   const [poke, setPoke] = useState([]);
   const [species, setSpecies] = useState([]);
+  const [evolve, setEvolve] = useState([]);
   const [loading, setLoading] = useState(true);
   const fetching = async () => {
     try {
       setLoading(true);
       const json = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
       const species = await (await fetch(json.species.url)).json();
+      const evolve = await (await fetch(species.evolution_chain.url)).json();
       setPoke(json);
       setName(`${json.name.charAt(0).toUpperCase()}${json.name.slice(1)}`);
       setSpecies(species);
+      setEvolve(evolve);
       setGeneration(species.generation.url.slice(-2, -1));
       console.log(json, species);
       setLoading(false);
@@ -82,12 +85,24 @@ function Poke() {
             {
               species.evolves_from_species &&
               <li>
-                generation from : <span onClick={() => {
+                evolves from : <span onClick={() => {
                   setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
                   console.log(id);
                 }}>{species.evolves_from_species.url.slice(42, -1)} {species.evolves_from_species.name}</span >
               </li>
             }
+            {
+              evolve.chain.species.name === poke.name || species.is_baby &&
+              <li>evolves to : {evolve.chain.evolves_to[0].species.url.slice(42, -1)}
+                &nbsp;{evolve.chain.evolves_to[0].species.name}
+              </li>
+            }
+            {/* {
+              evolve.chain.evolves_to[0].species.name === poke.name && evolve.chain.evolves_to[0] &&
+              <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
+              </li>
+            } */}
           </ul>
         </div>
       }
