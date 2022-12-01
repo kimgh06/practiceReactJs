@@ -17,7 +17,7 @@ function Poke() {
       const species = await (await fetch(json.species.url)).json();
       const evolve = await (await fetch(species.evolution_chain.url)).json();
       setPoke(json);
-      setName(`${json.name.charAt(0).toUpperCase()}${json.name.slice(1)}`);
+      setName(json.name.charAt(0).toUpperCase() + json.name.slice(1));
       setSpecies(species);
       setEvolve(evolve);
       setGeneration(species.generation.url.slice(-2, -1));
@@ -99,10 +99,11 @@ function Poke() {
             }
             {() => {
               try {
-                return (evolve.chain.evolves_to[0].species.name === poke.name &&
-                  <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
-                    &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
-                  </li>);
+                if (evolve.chain.evolves_to[0].species.name === poke.name)
+                  return (
+                    <li>evolves to: {evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                      &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}
+                    </li>);
               } catch { alert('없음'); }
             }}
           </ul>
