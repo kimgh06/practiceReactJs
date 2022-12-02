@@ -10,7 +10,7 @@ function Poke() {
   const [species, setSpecies] = useState([]);
   const [evolve, setEvolve] = useState([]);
   const [loading, setLoading] = useState(true);
-  const fetching = async () => {
+  const fetching = async (id) => {
     try {
       setLoading(true);
       const json = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)).json();
@@ -28,13 +28,13 @@ function Poke() {
     }
   }
   useEffect(() => {
-    fetching();
+    fetching(id);
   }, []);
   return (
     <div className='Poke'>
       <form onSubmit={(e) => {
         e.preventDefault();
-        fetching();
+        fetching(id);
       }}>
         <input value={id} onChange={(e) => {
           setId(e.target.value);
@@ -43,7 +43,10 @@ function Poke() {
       </form>
       {loading ? <h2>Loading...</h2> :
         <div style={{ display: 'flex' }}>
-          <button>◀</button>
+          <button onClick={() => {
+            setId((c) => { return c - 1 });
+            fetching(id - 1);
+          }}>◀</button>
           <div>
             <ul>
               <div style={{
@@ -120,7 +123,10 @@ function Poke() {
               }
             </ul>
           </div>
-          <button>▶</button>
+          <button onClick={() => {
+            setId((c) => { return c + 1 });
+            fetching(id + 1);
+          }}>▶</button>
         </div>
       }
     </div >
