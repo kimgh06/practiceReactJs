@@ -91,7 +91,7 @@ function Poke() {
                 species.evolves_from_species &&
                 <li>
                   evolved from : <span onClick={() => {
-                    setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
+                    setId((current) => { return parseInt(species.evolves_from_species.url.slice(42, -1)) });
                     fetching(species.evolves_from_species.url.slice(42, -1));
                   }}><b className='pokeNum' style={{
                     color: `${species.color.name}`
@@ -101,7 +101,7 @@ function Poke() {
               {
                 evolve.chain.evolves_to.length ? evolve.chain.species.name === poke.name &&
                   <li>evolves to : <span onClick={() => {
-                    setId((current) => { return evolve.chain.evolves_to[0].species.url.slice(42, -1) });
+                    setId((current) => { return parseInt(evolve.chain.evolves_to[0].species.url.slice(42, -1)) });
                     fetching(evolve.chain.evolves_to[0].species.url.slice(42, -1));
                   }}><b className='pokeNum' style={{
                     color: `${species.color.name}`
@@ -113,7 +113,7 @@ function Poke() {
                 evolve.chain.evolves_to.length ? (evolve.chain.evolves_to[0].evolves_to.length ?
                   evolve.chain.evolves_to[0].species.name === poke.name &&
                   <li>evolves to: <span onClick={() => {
-                    setId((current) => { return evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1) });
+                    setId((current) => { return parseInt(evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)) });
                     fetching(evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1));
                   }}><b className='pokeNum' style={{
                     color: `${species.color.name}`
