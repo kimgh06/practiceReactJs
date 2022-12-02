@@ -88,7 +88,9 @@ function Poke() {
                 evolved from : <span onClick={() => {
                   setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
                   console.log(id);
-                }}>{species.evolves_from_species.url.slice(42, -1)} {species.evolves_from_species.name}</span >
+                }}><b className='pokeNum' style={{
+                  color: `${species.color.name}`
+                }}>{species.evolves_from_species.url.slice(42, -1)}</b> {species.evolves_from_species.name}</span >
               </li>
             }
             {
@@ -96,7 +98,9 @@ function Poke() {
                 <li>evolves to : <span onClick={() => {
                   setId((current) => { return evolve.chain.evolves_to[0].species.url.slice(42, -1) });
                   console.log(id);
-                }}>{evolve.chain.evolves_to[0].species.url.slice(42, -1)}
+                }}><b className='pokeNum' style={{
+                  color: `${species.color.name}`
+                }}>{evolve.chain.evolves_to[0].species.url.slice(42, -1)}</b>
                   &nbsp;{evolve.chain.evolves_to[0].species.name}</span>
                 </li> : ''
             }
@@ -106,7 +110,9 @@ function Poke() {
                 <li>evolves to: <span onClick={() => {
                   setId((current) => { return evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1) });
                   console.log(id);
-                }}>{evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}
+                }}><b className='pokeNum' style={{
+                  color: `${species.color.name}`
+                }}>{evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}</b>
                   &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}</span>
                 </li> : '') : ''
             }
