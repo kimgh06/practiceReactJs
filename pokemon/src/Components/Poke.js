@@ -42,81 +42,85 @@ function Poke() {
         <button>Submit</button>
       </form>
       {loading ? <h2>Loading...</h2> :
-        <div>
-          <ul>
-            <div style={{
-              display: 'flex',
-            }}>
-              <span>
-                <b className='pokeNum' style={{
-                  color: `${species.color.name}`
-                }}>{poke.id}</b> {species.names[langNo].name}
-              </span>
-              &nbsp;
-              <select defaultValue={langNo} onChange={(e) => {
-                setLangNo(e.target.value);
-              }} title='Select your language'>
-                {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
-              </select>
-            </div>
-            <img src={poke.sprites.back_default} title={`The back of ${name}`} />
-            <img src={poke.sprites.front_default} title={`The front of ${name}`} />
-            <li>
-              {generation}
-              {(() => {
-                switch (generation % 20) {
-                  case 1:
-                    return 'st';
-                  case 2:
-                    return 'nd';
-                  case 3:
-                    return 'rd';
-                  default:
-                    return 'th';
-                }
-              })()} generation
-            </li>
-            <li>
-              {`${name}`}'s height : {(poke.height) / 10} m
-            </li>
-            <li>
-              {`${name}`}'s weight : {(poke.weight) / 10} kg
-            </li>
-            {
-              species.evolves_from_species &&
+        <div style={{ display: 'flex' }}>
+          <button>◀</button>
+          <div>
+            <ul>
+              <div style={{
+                display: 'flex',
+              }}>
+                <span>
+                  <b className='pokeNum' style={{
+                    color: `${species.color.name}`
+                  }}>{poke.id}</b> {species.names[langNo].name}
+                </span>
+                &nbsp;
+                <select defaultValue={langNo} onChange={(e) => {
+                  setLangNo(e.target.value);
+                }} title='Select your language'>
+                  {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
+                </select>
+              </div>
+              <img src={poke.sprites.back_default} title={`The back of ${name}`} />
+              <img src={poke.sprites.front_default} title={`The front of ${name}`} />
               <li>
-                evolved from : <span onClick={() => {
-                  setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
-                  console.log(id);
-                }}><b className='pokeNum' style={{
-                  color: `${species.color.name}`
-                }}>{species.evolves_from_species.url.slice(42, -1)}</b> {species.evolves_from_species.name}</span >
+                {generation}
+                {(() => {
+                  switch (generation % 20) {
+                    case 1:
+                      return 'st';
+                    case 2:
+                      return 'nd';
+                    case 3:
+                      return 'rd';
+                    default:
+                      return 'th';
+                  }
+                })()} generation
               </li>
-            }
-            {
-              evolve.chain.evolves_to.length ? evolve.chain.species.name === poke.name &&
-                <li>evolves to : <span onClick={() => {
-                  setId((current) => { return evolve.chain.evolves_to[0].species.url.slice(42, -1) });
-                  console.log(id);
-                }}><b className='pokeNum' style={{
-                  color: `${species.color.name}`
-                }}>{evolve.chain.evolves_to[0].species.url.slice(42, -1)}</b>
-                  &nbsp;{evolve.chain.evolves_to[0].species.name}</span>
-                </li> : ''
-            }
-            {
-              evolve.chain.evolves_to.length ? (evolve.chain.evolves_to[0].evolves_to.length ?
-                evolve.chain.evolves_to[0].species.name === poke.name &&
-                <li>evolves to: <span onClick={() => {
-                  setId((current) => { return evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1) });
-                  console.log(id);
-                }}><b className='pokeNum' style={{
-                  color: `${species.color.name}`
-                }}>{evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}</b>
-                  &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}</span>
-                </li> : '') : ''
-            }
-          </ul>
+              <li>
+                {`${name}`}'s height : {(poke.height) / 10} m
+              </li>
+              <li>
+                {`${name}`}'s weight : {(poke.weight) / 10} kg
+              </li>
+              {
+                species.evolves_from_species &&
+                <li>
+                  evolved from : <span onClick={() => {
+                    setId((current) => { return species.evolves_from_species.url.slice(42, -1) });
+                    console.log(id);
+                  }}><b className='pokeNum' style={{
+                    color: `${species.color.name}`
+                  }}>{species.evolves_from_species.url.slice(42, -1)}</b> {species.evolves_from_species.name}</span >
+                </li>
+              }
+              {
+                evolve.chain.evolves_to.length ? evolve.chain.species.name === poke.name &&
+                  <li>evolves to : <span onClick={() => {
+                    setId((current) => { return evolve.chain.evolves_to[0].species.url.slice(42, -1) });
+                    console.log(id);
+                  }}><b className='pokeNum' style={{
+                    color: `${species.color.name}`
+                  }}>{evolve.chain.evolves_to[0].species.url.slice(42, -1)}</b>
+                    &nbsp;{evolve.chain.evolves_to[0].species.name}</span>
+                  </li> : ''
+              }
+              {
+                evolve.chain.evolves_to.length ? (evolve.chain.evolves_to[0].evolves_to.length ?
+                  evolve.chain.evolves_to[0].species.name === poke.name &&
+                  <li>evolves to: <span onClick={() => {
+                    setId((current) => { return evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1) });
+                    console.log(id);
+                  }}><b className='pokeNum' style={{
+                    color: `${species.color.name}`
+                  }}>{evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)}</b>
+                    &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}</span>
+                  </li> : '') : ''
+              }
+            </ul>
+          </div>
+          <button>▶</button>
         </div>
       }
     </div >
