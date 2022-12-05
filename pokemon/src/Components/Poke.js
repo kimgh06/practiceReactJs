@@ -137,6 +137,12 @@ function Poke() {
                     &nbsp;{evolve.chain.evolves_to[0].evolves_to[0].species.name}</span>
                   </li> : '') : ''
               }
+              <div>
+                {species.flavor_text_entries.map((i, n) => langName === i.language.name && <div key={n} value={i.language.name}>
+                  <span>{i.version.name}</span>
+                  <pre>{i.flavor_text}</pre>
+                </div>)}
+              </div>
             </ul>
           </div>
           <button onClick={() => {
