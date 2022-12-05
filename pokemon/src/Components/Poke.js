@@ -49,7 +49,9 @@ function Poke() {
             setId((c) => { return c - 1 });
             fetching(id - 1);
           }}>◀</button>
-          <div>
+          <div style={{
+            marginLeft: '-12px'
+          }}>
             <ul>
               <div style={{
                 display: 'flex',
@@ -74,8 +76,10 @@ function Poke() {
                   </div>
                 </div>
               </div>
-              <img src={poke.sprites.back_default} title={`The back of ${name}`} />
-              <img src={poke.sprites.front_default} title={`The front of ${name}`} />
+              <div>
+                <img src={poke.sprites.back_default} title={`The back of ${name}`} />
+                <img src={poke.sprites.front_default} title={`The front of ${name}`} />
+              </div>
               <li>
                 {generation}
                 {(() => {
