@@ -35,10 +35,11 @@ function Poke() {
     <div className='Poke'>
       <form onSubmit={(e) => {
         e.preventDefault();
-        fetching(id);
+        setId(parseInt(id))
+        fetching(parseInt(id));
       }}>
         <input value={id} onChange={(e) => {
-          setId(parseInt(e.target.value));
+          setId(e.target.value);
         }} placeholder='Type id or name in English' />
         <button>Submit</button>
       </form>
