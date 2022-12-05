@@ -7,6 +7,7 @@ function Poke() {
   const [langName, setLangName] = useState('ko'); //설명을 띄우기 위한 언어이름 설정
   const [generation, setGeneration] = useState(); //세대
   const [name, setName] = useState(); //포켓몬 이름
+  const [version, setVersion] = useState('x'); //버전
   const [poke, setPoke] = useState([]);
   const [species, setSpecies] = useState([]);
   const [evolve, setEvolve] = useState([]);
@@ -22,6 +23,7 @@ function Poke() {
       setSpecies(species);
       setEvolve(evolve);
       setGeneration(species.generation.url.slice(-2, -1));
+      // setVersion
       console.log(json, species);
       setLoading(false);
     } catch (error) {
@@ -129,7 +131,7 @@ function Poke() {
                 evolve.chain.evolves_to.length ? (evolve.chain.evolves_to[0].evolves_to.length ?
                   evolve.chain.evolves_to[0].species.name === poke.name &&
                   <li>evolves to: <span onClick={() => {
-                    setId((current) => { return parseInt(evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)) });
+                    setId(parseInt(evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1)));
                     fetching(evolve.chain.evolves_to[0].evolves_to[0].species.url.slice(42, -1));
                   }}><b className='pokeNum' style={{
                     color: `${species.color.name}`
@@ -138,8 +140,17 @@ function Poke() {
                   </li> : '') : ''
               }
               <div>
+                <select defaultValue={version} onChange={(e) => {
+                  setVersion(e.target.value);
+                }}>
+                  <option>--Choose--</option>
+                  {
+                    species.flavor_text_entries.map((i, n) => langName === i.language.name &&
+                      <option key={n} value={i.version.name}>{i.version.name}</option>)
+                  }
+                </select>
                 {
-                  species.flavor_text_entries.map((i, n) => langName === i.language.name && <div
+                  species.flavor_text_entries.map((i, n) => version === i.version.name && langName === i.language.name && <div
                     key={n}
                     value={i.version.name}
                   >
