@@ -159,7 +159,6 @@ function Poke() {
                     key={n}
                     value={i.version.name}
                   >
-                    {/* <span>{i.version.name}</span> */}
                     <pre>{i.flavor_text}</pre>
                   </div>)
                 }

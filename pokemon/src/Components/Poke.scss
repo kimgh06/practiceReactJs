@@ -1,4 +1,4 @@
-$blue:skyblue;
+$gray:lightgray;
 
 .pokeNum{
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -20,12 +20,12 @@ $blue:skyblue;
       height: 50px;
       border:none;
       border-radius: 10px;
-      background-color: $blue;
+      background-color: $gray;
       &:hover{
-        background-color: lighten($blue, 5%);
+        background-color: lighten($gray, 5%);
       }
       &:active{
-        background-color: darken($blue, 5%);
+        background-color: darken($gray, 5%);
       }
     }
   }
