@@ -23,11 +23,10 @@ function Poke() {
       setSpecies(species);
       setEvolve(evolve);
       setGeneration(species.generation.url.slice(-2, -1));
-      // setVersion
       console.log(json, species);
       setLoading(false);
     } catch (error) {
-      alert("요청한 데이터를 찾지 못했습니다.\n" + error.message);
+      alert("요청한 데이터를 찾지 못했습니다. 다시입력 해주세요.\n" + error.message);
     }
   }
   useEffect(() => {
@@ -147,6 +146,8 @@ function Poke() {
                     fontSize: '15px',
                     textAlign: 'center',
                     borderRadius: '8px',
+                    marginLeft: '20%',
+                    marginTop: '10px',
                   }}>
                   <option>--Choose--</option>
                   {
