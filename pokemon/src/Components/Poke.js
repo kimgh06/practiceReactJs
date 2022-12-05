@@ -142,7 +142,12 @@ function Poke() {
               <div>
                 <select defaultValue={version} onChange={(e) => {
                   setVersion(e.target.value);
-                }}>
+                }}
+                  style={{
+                    fontSize: '15px',
+                    textAlign: 'center',
+                    borderRadius: '8px',
+                  }}>
                   <option>--Choose--</option>
                   {
                     species.flavor_text_entries.map((i, n) => langName === i.language.name &&
@@ -154,7 +159,7 @@ function Poke() {
                     key={n}
                     value={i.version.name}
                   >
-                    <span>{i.version.name}</span>
+                    {/* <span>{i.version.name}</span> */}
                     <pre>{i.flavor_text}</pre>
                   </div>)
                 }
