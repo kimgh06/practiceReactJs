@@ -24,8 +24,8 @@ function Poke() {
       setGeneration(species.generation.url.slice(-2, -1));
       console.log(json, species);
       setLoading(false);
-    } catch {
-      alert("요청한 데이터를 찾지 못했습니다.");
+    } catch (error) {
+      alert("요청한 데이터를 찾지 못했습니다.\n" + error.message);
     }
   }
   useEffect(() => {
@@ -103,9 +103,11 @@ function Poke() {
                   evolved from : <span onClick={() => {
                     setId((current) => { return parseInt(species.evolves_from_species.url.slice(42, -1)) });
                     fetching(species.evolves_from_species.url.slice(42, -1));
-                  }}><b className='pokeNum' style={{
-                    color: `${species.color.name}`
-                  }}>{species.evolves_from_species.url.slice(42, -1)}</b> {species.evolves_from_species.name}</span >
+                  }}>
+                    <b className='pokeNum' style={{
+                      color: `${species.color.name}`
+                    }}>{species.evolves_from_species.url.slice(42, -1)}</b>&nbsp;
+                    {species.evolves_from_species.name}</span>
                 </li>
               }
               {
