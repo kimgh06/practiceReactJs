@@ -4,6 +4,7 @@ import './Poke.scss';
 function Poke() {
   const [id, setId] = useState(25);
   const [langNo, setLangNo] = useState(2); //언어 번호
+  const [langName, setLangName] = useState('ko'); //설명을 띄우기 위한 언어이름 설정
   const [generation, setGeneration] = useState(); //세대
   const [name, setName] = useState(); //포켓몬 이름
   const [poke, setPoke] = useState([]);
@@ -37,7 +38,7 @@ function Poke() {
         fetching(id);
       }}>
         <input value={id} onChange={(e) => {
-          setId(e.target.value);
+          setId(parseInt(e.target.value));
         }} placeholder='Type id or name in English' />
         <button>Submit</button>
       </form>
@@ -52,17 +53,25 @@ function Poke() {
               <div style={{
                 display: 'flex',
               }}>
-                <span>
-                  <b className='pokeNum' style={{
-                    color: `${species.color.name}`
-                  }}>{poke.id}</b> {species.names[langNo].name}
-                </span>
+                <b className='pokeNum' style={{
+                  color: `${species.color.name}`
+                }}>{poke.id}</b>
                 &nbsp;
-                <select defaultValue={langNo} onChange={(e) => {
-                  setLangNo(e.target.value);
-                }} title='Select your language'>
-                  {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
-                </select>
+                <div style={{ margin: '0px' }}>
+                  <span>
+                    {species.names[langNo].name}
+                  </span>
+                  &nbsp;
+                  <select defaultValue={langNo} onChange={(e) => {
+                    setLangNo(e.target.value);
+                    setLangName(e.target[e.target.value].text);
+                  }} title='Select your language'>
+                    {species.names.map((i, n) => <option key={n} value={i.language.url.slice(-2, -1) - 1}>{i.language.name}</option>)}
+                  </select>
+                  <div>
+                    {species.genera.map((i, n) => langName === i.language.name && <div key={n} value={i.language.name} >{i.genus}</div>)}
+                  </div>
+                </div>
               </div>
               <img src={poke.sprites.back_default} title={`The back of ${name}`} />
               <img src={poke.sprites.front_default} title={`The front of ${name}`} />
