@@ -138,10 +138,15 @@ function Poke() {
                   </li> : '') : ''
               }
               <div>
-                {species.flavor_text_entries.map((i, n) => langName === i.language.name && <div key={n} value={i.language.name}>
-                  <span>{i.version.name}</span>
-                  <pre>{i.flavor_text}</pre>
-                </div>)}
+                {
+                  species.flavor_text_entries.map((i, n) => langName === i.language.name && <div
+                    key={n}
+                    value={i.version.name}
+                  >
+                    <span>{i.version.name}</span>
+                    <pre>{i.flavor_text}</pre>
+                  </div>)
+                }
               </div>
             </ul>
           </div>
